@@ -594,4 +594,4 @@ Access http://localhost/online-tourism/
 
 Login with admin/user credentials
 
-Start exploring!
+Start exploring
