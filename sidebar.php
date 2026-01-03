@@ -51,7 +51,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </li>
                 </ul>
             </li>
-            
             <li class="nav-section">
                 <span class="section-title">User Management</span>
                 <ul>
@@ -83,7 +82,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </li>
                 </ul>
             </li>
-            
             <li>
                 <a href="logout.php" class="logout-link">
                     <i class="fas fa-sign-out-alt"></i> Logout
@@ -91,4 +89,5 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </li>
         </ul>
     </nav>
+
 </aside>
