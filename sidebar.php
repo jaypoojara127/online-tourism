@@ -23,6 +23,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             <i class="fas fa-map-marker-alt"></i> Destinations
                         </a>
                     </li>
+                    
                     <li>
                         <a href="manage-packages.php" class="<?php echo $current_page == 'manage-packages.php' ? 'active' : ''; ?>">
                             <i class="fas fa-suitcase-rolling"></i> Tour Packages
@@ -91,3 +92,4 @@ $current_page = basename($_SERVER['PHP_SELF']);
     </nav>
 
 </aside>
+
