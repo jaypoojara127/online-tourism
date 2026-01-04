@@ -3,6 +3,7 @@
         <button class="sidebar-toggle">
             <i class="fas fa-bars"></i>
         </button>
+        
         <div class="header-search">
             <form action="search.php" method="GET">
                 <input type="text" name="q" placeholder="Search...">
@@ -64,4 +65,5 @@
         </div>
     </div>
 </header>
+
 
