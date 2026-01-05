@@ -68,7 +68,30 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </ul>
             </li>
             
-          
+           <li class="nav-section">
+                <span class="section-title">Settings</span>
+                <ul>
+                    <li>
+                        <a href="settings.php" class="<?php echo $current_page == 'settings.php' ? 'active' : ''; ?>">
+                            <i class="fas fa-cog"></i> Site Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.php" class="<?php echo $current_page == 'profile.php' ? 'active' : ''; ?>">
+                            <i class="fas fa-user-cog"></i> Admin Profile
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="logout.php" class="logout-link">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside> 
+
 
 
 
