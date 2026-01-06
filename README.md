@@ -71,4 +71,4 @@ Server: XAMPP/WAMP (Localhost)
 
 ✅ Email notification system (ready for integration)
 
-✅ Database backup & recovery
+
