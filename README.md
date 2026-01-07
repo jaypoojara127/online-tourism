@@ -72,3 +72,19 @@ Server: XAMPP/WAMP (Localhost)
 ✅ Email notification system (ready for integration)
 
 ✅ Database backup & recovery
+
+📂 Project Structure
+text
+online-tourism/
+├── assets/
+│   ├── css/              # Stylesheets
+│   ├── js/               # JavaScript files
+│   └── images/           # Images & uploads
+├── includes/             # Core PHP files
+├── admin/                # Admin panel
+├── user/                 # User dashboard
+├── pages/                # Frontend pages
+├── api/                  # API endpoints
+├── index.php             # Home page
+├── .htaccess             # URL rewriting & security
+└── online_tourism.sql    # Database schema
