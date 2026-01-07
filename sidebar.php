@@ -83,7 +83,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </li>
                 </ul>
             </li>
+             <li>
+                <a href="logout.php" class="logout-link">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside> 
            
+
 
 
 
