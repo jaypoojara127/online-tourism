@@ -1,3 +1,9 @@
+<?php
+require_once '../includes/config.php';
+require_once '../includes/auth.php';
+require_once '../includes/functions.php';
+
+$auth->checkAdminAuth();
 
 // Get dashboard statistics
 $sql_users = "SELECT COUNT(*) as total FROM users";
@@ -172,3 +178,4 @@ $recent_bookings = $db->executeQuery($sql_recent);
 </body>
 
 </html>
+
