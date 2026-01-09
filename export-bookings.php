@@ -40,4 +40,31 @@ if ($format === 'csv') {
         'Payment Status', 'Transaction ID', 'Booked On'
     ));
     
-   
+    // Data rows
+    while ($booking = $result->fetch_assoc()) {
+        fputcsv($output, array(
+            $booking['booking_id'],
+            $booking['full_name'],
+            $booking['email'],
+            $booking['phone'],
+            $booking['package_name'],
+            $booking['destination_name'],
+            $booking['travel_date'],
+            $booking['num_travelers'],
+            $booking['total_amount'],
+            $booking['booking_status'],
+            $booking['payment_status'] ?? 'Not Paid',
+            $booking['transaction_id'] ?? '',
+            $booking['created_at']
+        ));
+    }
+    
+    fclose($output);
+    exit();
+}
+
+// For other formats (PDF, Excel), you would use appropriate libraries
+echo "Export format $format not implemented yet.";
+
+?>
+
