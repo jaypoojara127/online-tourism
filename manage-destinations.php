@@ -296,4 +296,20 @@ if ($action === 'edit' && $destination_id > 0) {
         </div>
     </div>
     
-    
+    <script src="../assets/js/admin.js"></script>
+    <script>
+    // Search functionality
+    document.getElementById('searchDestinations').addEventListener('keyup', function() {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#destinationsTable tbody tr');
+        
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(filter) ? '' : 'none';
+        });
+    });
+    </script>
+</body>
+
+</html>
+
