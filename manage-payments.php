@@ -1,4 +1,7 @@
 <?php
+require_once '../includes/config.php';
+require_once '../includes/auth.php';
+require_once '../includes/functions.php';
 
 $auth->checkAdminAuth();
 
@@ -271,4 +274,5 @@ $stats = $stats_result ? $stats_result->fetch_assoc() : ['total_payments' => 0, 
     <script src="../assets/js/admin.js"></script>
 </body>
 </html>
+
 
