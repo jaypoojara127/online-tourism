@@ -276,20 +276,5 @@ if ($action === 'add' && $package_id) {
                                         <textarea id="activities" name="activities" rows="3"><?php echo htmlspecialchars($selected_itinerary['activities'] ?? ''); ?></textarea>
                                     </div>
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">
-                                            <?php echo $action === 'add' ? 'Add' : 'Update'; ?> Itinerary
-                                        </button>
-                                        <a href="manage-itineraries.php" class="btn btn-secondary">Cancel</a>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </main>
-        </div>
-    </div>
-    <script src="../assets/js/admin.js"></script>
-</body>
-</html>
+                                    
+
