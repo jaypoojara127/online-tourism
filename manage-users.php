@@ -1,6 +1,4 @@
 <?php
-require_once '../includes/config.php';
-require_once '../includes/auth.php';
 
 $auth->checkAdminAuth();
 
@@ -225,4 +223,5 @@ $result = $db->executeQuery($sql);
     }
     </style>
 </body>
+
 </html>
