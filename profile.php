@@ -1,6 +1,4 @@
 <?php
-require_once '../includes/config.php';
-require_once '../includes/auth.php';
 
 $auth->checkAdminAuth();
 
@@ -195,3 +193,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="../assets/js/admin.js"></script>
 </body>
 </html>
+
