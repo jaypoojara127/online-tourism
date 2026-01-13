@@ -88,40 +88,5 @@ online-tourism/
 ├── index.php             # Home page
 ├── .htaccess             # URL rewriting & security
 └── online_tourism.sql    # Database schema
-🔐 Default Login Credentials
-👨‍💼 Admin Account
-Username: admin
 
-Password: admin123
-
-Email: admin@tourism.com
-
-Role: Super Admin
-
-Access URL: http://localhost/online-tourism/admin/
-
-👤 User Accounts (Pre-loaded)
-User 1:
-
-Username: jay127
-
-Password: jay@123
-
-Email: jay@gmail.com
-
-User 2:
-
-Username: tarun77
-
-Password: tarun@123
-
-Email: tarun@gmail.com
-
-User 3:
-
-Username: sneh912
-
-Password: sneh@123
-
-Email: sneh@gmail.com
 
