@@ -1,71 +1,54 @@
-<header class="admin-header">
-
-    <div class="header-content">
-        <button class="sidebar-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <div class="header-search">
-            <form action="search.php" method="GET">
-                <input type="text" name="q" placeholder="Search...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-        
-        <div class="header-actions">
-            <div class="notification-dropdown">
-                <button class="notification-btn">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-count">3</span>
-                </button>
-                <div class="notification-dropdown-content">
-                    <div class="notification-header">
-                        <h4>Notifications</h4>
-                    </div>
-                    <div class="notification-list">
-                        <a href="#" class="notification-item">
-                            <i class="fas fa-shopping-cart text-success"></i>
-                            <div>
-                                <p>New booking received</p>
-                                <small>2 minutes ago</small>
-                            </div>
+<?php
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="<?php echo SITE_URL; ?>" class="logo">
+                    <span>Explore</span>World
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="<?php echo SITE_URL; ?>" class="<?php echo $current_page == 'index.php' ? 'active' : ''; ?>">Home</a></li>
+                    <li><a href="<?php echo SITE_URL; ?>pages/destinations.php" class="<?php echo $current_page == 'destinations.php' ? 'active' : ''; ?>">Destinations</a></li>
+                    <li><a href="<?php echo SITE_URL; ?>pages/packages.php" class="<?php echo $current_page == 'packages.php' ? 'active' : ''; ?>">Tour Packages</a></li>
+                    <li><a href="<?php echo SITE_URL; ?>pages/contact.php" class="<?php echo $current_page == 'contact.php' ? 'active' : ''; ?>">Contact</a></li>
+                    
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="<?php echo SITE_URL; ?>user/dashboard.php" class="<?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">Dashboard</a></li>
+                    <?php endif; ?>
+                    
+                    <?php if (isset($_SESSION['admin_id'])): ?>
+                    <li><a href="<?php echo SITE_URL; ?>admin/dashboard.php" class="<?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">Admin Panel</a></li>
+                    <?php endif; ?>
+                </ul>
+                
+                <div class="user-menu">
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <span class="welcome-text">Hi, <?php echo $_SESSION['full_name']; ?></span>
+                        <a href="<?php echo SITE_URL; ?>user/dashboard.php" class="btn btn-outline">
+                            <i class="fas fa-user-circle"></i> Dashboard
                         </a>
-                        <a href="#" class="notification-item">
-                            <i class="fas fa-user-plus text-info"></i>
-                            <div>
-                                <p>New user registered</p>
-                                <small>10 minutes ago</small>
-                            </div>
+                        <a href="<?php echo SITE_URL; ?>pages/logout.php" class="btn btn-outline">
+                            <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
-                        <a href="#" class="notification-item">
-                            <i class="fas fa-star text-warning"></i>
-                            <div>
-                                <p>New review submitted</p>
-                                <small>1 hour ago</small>
-                            </div>
+                    <?php elseif (isset($_SESSION['admin_id'])): ?>
+                        <span class="welcome-text">Admin: <?php echo $_SESSION['admin_username']; ?></span>
+                        <a href="<?php echo SITE_URL; ?>admin/dashboard.php" class="btn btn-outline">
+                            <i class="fas fa-cog"></i> Admin
                         </a>
-                    </div>
+                        <a href="<?php echo SITE_URL; ?>admin/logout.php" class="btn btn-outline">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    <?php else: ?>
+                        <a href="<?php echo SITE_URL; ?>pages/login.php" class="btn btn-outline">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                        <a href="<?php echo SITE_URL; ?>pages/register.php" class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                    <?php endif; ?>
                 </div>
-            </div>
-            
-            <div class="user-dropdown">
-                <button class="user-btn">
-                    <div class="user-avatar">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <span><?php echo $_SESSION['admin_username']; ?></span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="user-dropdown-content">
-                    <a href="profile.php"><i class="fas fa-user"></i> Profile</a>
-                    <a href="settings.php"><i class="fas fa-cog"></i> Settings</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </div>
-            </div>
+            </nav>
         </div>
-    </div>
-</header>
-
-
-
+    </header>
