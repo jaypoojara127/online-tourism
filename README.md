@@ -125,3 +125,31 @@ Password: sneh@123
 
 Email: sneh@gmail.com
 
+💳 Payment Gateway Setup
+The project integrates PayU Money payment gateway. For testing:
+
+Test Credentials:
+Merchant Key: gtKFFx (Test Key)
+
+Merchant Salt: eCwWELxi (Test Salt)
+
+Test Card Details:
+
+Card Number: 5123456789012346
+
+Expiry: 05/25
+
+CVV: 123
+
+Name: Test User
+
+Payment Methods Supported:
+Credit/Debit Cards
+
+Net Banking
+
+UPI Payments
+
+Digital Wallets
+
+
