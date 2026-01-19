@@ -65,6 +65,4 @@ if ($format === 'csv') {
 
 // For other formats (PDF, Excel), you would use appropriate libraries
 echo "Export format $format not implemented yet.";
-
 ?>
-
