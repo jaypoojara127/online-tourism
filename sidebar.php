@@ -1,100 +1,51 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
-<aside class="admin-sidebar">
-    <div class="sidebar-header">
-        <h3><i class="fas fa-crown"></i> Admin Panel</h3>
-        <p><?php echo $_SESSION['admin_username']; ?></p>
+<aside class="dashboard-sidebar">
+    <div class="user-profile">
+        <?php
+        $user_sql = "SELECT * FROM users WHERE user_id = '$user_id'";
+        $user_result = $db->executeQuery($user_sql);
+        $user = $user_result->fetch_assoc();
+        ?>
+        <div class="profile-image">
+            <?php if(!empty($user['profile_image'])): ?>
+            <img src="<?php echo UPLOAD_URL . $user['profile_image']; ?>" alt="<?php echo $user['full_name']; ?>">
+            <?php else: ?>
+            <div class="profile-initials">
+                <?php echo strtoupper(substr($user['full_name'], 0, 1)); ?>
+            </div>
+            <?php endif; ?>
+        </div>
+        <div class="profile-info">
+            <h3><?php echo $user['full_name']; ?></h3>
+            <p><?php echo $user['email']; ?></p>
+        </div>
     </div>
     
-    <nav class="sidebar-nav">
+    <nav class="dashboard-nav">
         <ul>
-            <li>
-                <a href="dashboard.php" class="<?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">
-                    <i class="fas fa-tachometer-alt"></i> Dashboard
-                </a>
-            </li>
-            
-            <li class="nav-section">
-                <span class="section-title">Content Management</span>
-                <ul>
-                    <li>
-                        <a href="manage-destinations.php" class="<?php echo $current_page == 'manage-destinations.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-map-marker-alt"></i> Destinations
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="manage-packages.php" class="<?php echo $current_page == 'manage-packages.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-suitcase-rolling"></i> Tour Packages
-                        </a>
-                    </li>
-                    <li>
-                        <a href="manage-itineraries.php" class="<?php echo $current_page == 'manage-itineraries.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-calendar-alt"></i> Itineraries
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            
-            <li class="nav-section">
-                <span class="section-title">Booking Management</span>
-                <ul>
-                    <li>
-                        <a href="manage-bookings.php" class="<?php echo $current_page == 'manage-bookings.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-shopping-cart"></i> Bookings
-                        </a>
-                    </li>
-                    <li>
-                        <a href="manage-payments.php" class="<?php echo $current_page == 'manage-payments.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-credit-card"></i> Payments
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-section">
-                <span class="section-title">User Management</span>
-                <ul>
-                    <li>
-                        <a href="manage-users.php" class="<?php echo $current_page == 'manage-users.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-users"></i> Users
-                        </a>
-                    </li>
-                    <li>
-                        <a href="manage-reviews.php" class="<?php echo $current_page == 'manage-reviews.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-star"></i> Reviews
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            
-           <li class="nav-section">
-                <span class="section-title">Settings</span>
-                <ul>
-                    <li>
-                        <a href="settings.php" class="<?php echo $current_page == 'settings.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-cog"></i> Site Settings
-                        </a>
-                    </li>
-                    <li>
-                        <a href="profile.php" class="<?php echo $current_page == 'profile.php' ? 'active' : ''; ?>">
-                            <i class="fas fa-user-cog"></i> Admin Profile
-                        </a>
-                    </li>
-                </ul>
-            </li>
-             <li>
-                <a href="logout.php" class="logout-link">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
-            </li>
+            <li><a href="dashboard.php" class="<?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a></li>
+            <li><a href="bookings.php" class="<?php echo $current_page == 'bookings.php' ? 'active' : ''; ?>">
+                <i class="fas fa-shopping-cart"></i> My Bookings
+            </a></li>
+            <li><a href="profile.php" class="<?php echo $current_page == 'profile.php' ? 'active' : ''; ?>">
+                <i class="fas fa-user"></i> Profile Settings
+            </a></li>
+            <li><a href="payment-history.php" class="<?php echo $current_page == 'payment-history.php' ? 'active' : ''; ?>">
+                <i class="fas fa-credit-card"></i> Payment History
+            </a></li>
+            <li><a href="reviews.php" class="<?php echo $current_page == 'reviews.php' ? 'active' : ''; ?>">
+                <i class="fas fa-star"></i> My Reviews
+            </a></li>
+            <li><a href="../pages/packages.php">
+                <i class="fas fa-plus"></i> Book New Tour
+            </a></li>
+            <li><a href="../pages/logout.php">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a></li>
         </ul>
     </nav>
-</aside> 
-           
-
-
-
-
-
-
+</aside>
