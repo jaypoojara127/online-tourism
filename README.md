@@ -152,4 +152,35 @@ UPI Payments
 
 Digital Wallets
 
+🗄️ Database Information
+Database Name: online_tourism
+Key Tables:
+users - User account information
+
+admin - Admin account information
+
+destinations - Tourist destinations
+
+tour_packages - Tour packages with pricing
+
+itinerary - Day-wise tour plans
+
+inclusions - Package inclusions/exclusions
+
+bookings - User bookings
+
+payments - Payment transactions
+
+reviews - User reviews & ratings
+
+contact_messages - Contact form submissions
+
+Sample Data Pre-loaded:
+6 Popular Destinations
+
+6 Tour Packages
+
+3 Sample Users
+
+Sample Bookings & Reviews
 
