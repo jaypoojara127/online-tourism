@@ -184,3 +184,68 @@ Sample Data Pre-loaded:
 
 Sample Bookings & Reviews
 
+🛠️ Installation Guide
+Prerequisites:
+XAMPP/WAMP installed
+
+PHP 7.4+ with MySQLi extension
+
+Web browser
+
+Step-by-Step Setup:
+Install XAMPP:
+
+bash
+Download from: https://www.apachefriends.org/
+Install and start Apache & MySQL
+Setup Project:
+
+bash
+# Copy project to htdocs
+C:\xampp\htdocs\online-tourism\
+
+# Or use git
+git clone <repository-url> C:\xampp\htdocs\online-tourism\
+Create Database:
+
+sql
+# Method 1: Using phpMyAdmin
+1. Open http://localhost/phpmyadmin
+2. Create new database: 'online_tourism'
+3. Import 'online_tourism.sql' file
+
+# Method 2: Using MySQL CLI
+mysql -u root -p
+CREATE DATABASE online_tourism;
+USE online_tourism;
+SOURCE online_tourism.sql;
+Configure Database Connection:
+Edit includes/config.php:
+
+php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');      // Default XAMPP
+define('DB_PASS', '');          // Default XAMPP (no password)
+define('DB_NAME', 'online_tourism');
+Set Upload Permissions:
+
+bash
+# Create upload directories
+mkdir assets/images/uploads/
+mkdir assets/images/uploads/destinations/
+mkdir assets/images/uploads/packages/
+mkdir assets/images/uploads/gallery/
+mkdir assets/images/uploads/profiles/
+
+# Set permissions (Linux/Mac)
+chmod -R 755 assets/images/uploads/
+
+# Windows: Give write permissions to these folders
+Configure PayU (Optional for Testing):
+Edit includes/config.php:
+
+php
+define('PAYU_MERCHANT_KEY', 'gtKFFx');
+define('PAYU_MERCHANT_SALT', 'eCwWELxi');
+define('PAYU_BASE_URL', 'https://test.payu.in');
+🚀 Running the Application
