@@ -249,3 +249,313 @@ define('PAYU_MERCHANT_KEY', 'gtKFFx');
 define('PAYU_MERCHANT_SALT', 'eCwWELxi');
 define('PAYU_BASE_URL', 'https://test.payu.in');
 🚀 Running the Application
+Start XAMPP Control Panel:
+
+Start Apache
+
+Start MySQL
+
+Access the Application:
+
+Main Website: http://localhost/online-tourism/
+
+Admin Panel: http://localhost/online-tourism/admin/
+
+User Login: http://localhost/online-tourism/pages/login.php
+
+Test the Features:
+
+Register a new user account
+
+Browse destinations & packages
+
+Make a test booking
+
+Try test payment (use test credentials)
+
+Login as admin to manage content
+
+📱 User Flow
+For Regular Users:
+Register/Login → Create account or sign in
+
+Browse → View destinations & packages
+
+Select → Choose package & travel dates
+
+Book → Enter traveler details
+
+Pay → Complete payment via PayU
+
+Manage → View bookings in dashboard
+
+Review → Share experience after travel
+
+For Admin:
+Login → Access admin panel
+
+Dashboard → View statistics & analytics
+
+Manage Content → Add/edit destinations & packages
+
+Manage Bookings → Confirm/cancel bookings
+
+Manage Users → View & manage user accounts
+
+Moderate → Approve/reject reviews
+
+🔒 Security Features
+Password Security:
+
+Bcrypt password hashing
+
+Password strength validation
+
+Secure password reset mechanism
+
+Session Security:
+
+Session regeneration
+
+Session timeout (30 minutes)
+
+Secure cookie settings
+
+Input Validation:
+
+Client-side JavaScript validation
+
+Server-side PHP validation
+
+SQL injection prevention
+
+XSS protection
+
+File Upload Security:
+
+File type validation
+
+File size restrictions
+
+Virus scanning (placeholder)
+
+Payment Security:
+
+SSL encryption
+
+Secure payment gateway
+
+Transaction logging
+
+📊 Database Schema Details
+Users Table (users):
+sql
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,  -- Bcrypt hashed
+    full_name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20),
+    address TEXT,
+    profile_image VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+Tour Packages Table (tour_packages):
+sql
+CREATE TABLE tour_packages (
+    package_id INT PRIMARY KEY AUTO_INCREMENT,
+    package_name VARCHAR(200) NOT NULL,
+    destination_id INT,
+    duration_days INT NOT NULL,
+    duration_nights INT NOT NULL,
+    price_per_person DECIMAL(10,2) NOT NULL,
+    discount_price DECIMAL(10,2),
+    max_capacity INT NOT NULL,
+    current_bookings INT DEFAULT 0,
+    status ENUM('active','inactive','sold_out') DEFAULT 'active'
+);
+🎨 Design Features
+Responsive Design:
+Mobile First approach
+
+Bootstrap-like grid system
+
+Flexible layouts for all devices
+
+Touch-friendly navigation
+
+UI Components:
+Modern card-based design
+
+Interactive forms with validation
+
+Image galleries with lightbox
+
+Progress indicators for bookings
+
+Notification system (toasts)
+
+Color Scheme:
+Primary: #3498db (Blue)
+
+Secondary: #2ecc71 (Green)
+
+Accent: #e74c3c (Red)
+
+Dark: #2c3e50 (Dark Blue)
+
+Light: #ecf0f1 (Light Gray)
+
+📧 Email Notifications (Placeholder)
+The system is designed to support email notifications for:
+
+Registration confirmation
+
+Booking confirmation
+
+Payment receipts
+
+Travel reminders
+
+Password reset
+
+To enable emails: Configure SMTP settings in includes/config.php
+
+🧪 Testing Guide
+Functional Testing:
+User Registration: Test with valid/invalid data
+
+Login/Logout: Test authentication flow
+
+Booking Flow: Complete booking process
+
+Payment: Test with PayU sandbox
+
+Admin Functions: Test all CRUD operations
+
+Browser Compatibility:
+✅ Chrome 80+
+
+✅ Firefox 75+
+
+✅ Safari 13+
+
+✅ Edge 80+
+
+✅ Mobile browsers
+
+Performance Testing:
+Page load time < 3 seconds
+
+Database queries optimized
+
+Image compression implemented
+
+Caching enabled
+
+🔄 Update & Maintenance
+Regular Maintenance Tasks:
+Database Backup:
+
+sql
+mysqldump -u root -p online_tourism > backup_$(date +%Y%m%d).sql
+Clear Old Data:
+
+sql
+-- Auto-clean pending bookings after 24 hours
+UPDATE bookings 
+SET booking_status = 'cancelled'
+WHERE booking_status = 'pending' 
+AND created_at < DATE_SUB(NOW(), INTERVAL 24 HOUR);
+Update Configuration:
+
+Update payment gateway credentials
+
+Change admin passwords regularly
+
+Update contact information
+
+Adding New Features:
+New Payment Gateway:
+
+Create new payment processor class
+
+Update payment form
+
+Add to configuration
+
+Social Login:
+
+Integrate OAuth providers
+
+Update registration flow
+
+Modify user table
+
+🐛 Troubleshooting
+Common Issues & Solutions:
+Database Connection Error:
+
+bash
+# Check if MySQL is running
+# Verify credentials in config.php
+# Check database exists
+File Upload Errors:
+
+bash
+# Check folder permissions
+# Verify upload limits in php.ini
+# Check file size restrictions
+Payment Gateway Issues:
+
+bash
+# Verify PayU credentials
+# Check internet connection
+# Test with sandbox credentials
+Session Problems:
+
+bash
+# Clear browser cookies
+# Check session.save_path in php.ini
+# Verify session_start() in files
+Debug Mode:
+Enable in includes/config.php:
+
+php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+📄 Documentation Files
+The project includes:
+
+✅ This README.md - Complete setup guide
+
+✅ Code Comments - Inline documentation
+
+✅ Database Schema - Complete SQL file
+
+✅ API Documentation - In code comments
+
+✅ User Manual - Inline help texts
+
+👥 Project Team & Credits
+Developed For:
+College Final Year Project
+
+Computer Science/IT Department
+
+Academic Year 2024-2025
+
+Technologies Used:
+PHP - Server-side scripting
+
+MySQL - Database management
+
+HTML5/CSS3 - Frontend structure & styling
+
+JavaScript - Client-side interactivity
+
+PayU API - Payment processing
+
+FPDF - PDF generation
+
