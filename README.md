@@ -559,3 +559,42 @@ PayU API - Payment processing
 
 FPDF - PDF generation
 
+Learning Outcomes:
+Full-stack web development
+
+Database design & management
+
+Payment gateway integration
+
+User authentication & security
+
+Responsive web design
+
+Project documentation
+
+📞 Support & Contact
+For support or queries:
+
+Email: support@tourism.com
+
+Phone: +91 9876543210
+
+Website: http://localhost/online-tourism/pages/contact.php
+
+📜 License
+This project is developed for educational purposes only. Not for commercial use without proper licensing.
+
+🎯 Quick Start Summary
+Install XAMPP
+
+Import database online_tourism.sql
+
+Configure includes/config.php
+
+Set permissions for upload folders
+
+Access http://localhost/online-tourism/
+
+Login with admin/user credentials
+
+Start exploring!
